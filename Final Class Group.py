@@ -8,25 +8,6 @@ import sympy
 import random
 import cmath
 
-# K.<x> = NumberField(x**2 + 5)
-print("Run: ", random.randint(0, 100))
-
-Qx = QQ['x']
-# P = Qx([1791, 585, 24, 0, 1])
-# P = Qx([-82, 0, 1]) # Z4
-# P = Qx([-6, -9, 0, 1]) # trivial
-# P = Qx([-1, 14, 0, 1]) # Z2 x Z4
-# P = Qx([-22, 1, -1, 1]) # Z2 x Z4
-# P = Qx([-30, 26, -1, 1]) # Z2 x Z4
-# P = Qx([-65, 0, 0, 1]) # didn't work with final alg!
-# P = Qx([90, 0, 61, 0, 8, 0, 1]) # didn't work with final alg!
-# P = Qx([1444, 0, 73, 0, 1]) # Z7 x Z14 # also didn't work with final alg!
-# P = Qx([390, 0, 1, -2, 1]) # Z2 x Z4 x Z8
-# P = Qx([7569, 0, 134, 0, 1]) # Z2 x Z8 x Z16 -- worked after 5-10 minutes!!!
-# P = Qx([1001, 0, 1])
-# P = Qx([-182, 0, 0, 1]) # doesn't work (yet)
-P = Qx([5, 0, 1])
-
 
 # Implementation of Algorithm 6.5.7 of [2]
 # for the regulator R and the fundamental unit matrix F
@@ -114,7 +95,7 @@ def deltaC(a):
 # Specify the number field by the minimal polynomial P
 # of an integral primitive element alpha
 Qx = QQ['x']
-#P = Qx([105, 0, 1])  # [2,2,2]
+P = Qx([105, 0, 1])  # [2,2,2]
 K = NumberField(P, 'a')
 (a) = K.gens()
 n = K.degree()
