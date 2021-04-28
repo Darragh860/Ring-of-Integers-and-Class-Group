@@ -315,8 +315,10 @@ while True:
     print("F: \n", F)
 
     # Step 9: Check that C and H are full-rank
-    if H.rank() != H.nrows(): continue
-    if C.rank() != C.nrows(): continue
+    if (H.rank() != H.nrows()) or (C.rank() != C.nrows()):
+        print("Not enough relations! Continuing search.")
+        k2 += 10
+        continue
 
     # Step 10: Compute the matrix W
     i = 0
